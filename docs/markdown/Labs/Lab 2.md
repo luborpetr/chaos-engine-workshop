@@ -171,18 +171,26 @@ Checking connectivity... done.
 ```
 
 ### Adjust configuration
-On the Chaos Engine machine go to `chaos-engine` directory and replace `docker-compose.yml` with a file :
+On the Chaos Engine machine go to `chaos-engine` directory and replace `docker-compose.yml` with a file from the workshop repo:
+```bash
+ wget https://raw.githubusercontent.com/luborpetr/chaos-engine-workshop/master/docker/docker-compose.yml .
+```
+
 
 ### Pull Docker Images
+
+```bash
 lubor@chaos-engine:~/chaos-engine$ docker-compose pull
 Pulling vault        ... done
 Pulling vault-loader ... done
 Pulling chaosengine  ... done
+```
 
+```bash
 lubor@chaos-engine:~/chaos-engine$ docker images
 REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
 thalesgroup/chaos-engine   stable              46c560a17d9a        2 days ago          304MB
 vault                      latest              0542f65ae3d0        4 weeks ago         140MB
-
+```
 
 
