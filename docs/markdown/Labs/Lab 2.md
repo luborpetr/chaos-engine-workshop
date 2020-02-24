@@ -47,7 +47,7 @@ instances create chaos-engine \
 
 ```tab="expected output"
 WARNING: You have selected a disk size of under [200GB]. This may result in poor I/O performance. For more information, see: https://developers.google.com/compute/docs/disks#performance.
-Created [https://www.googleapis.com/compute/v1/projects/gemalto-cspeng/zones/europe-west2-c/instances/chaos-engine].
+Created [https://www.googleapis.com/compute/v1/projects/xxxx/zones/europe-west2-c/instances/chaos-engine].
 WARNING: Some requests generated warnings:
  - Disk size: '20 GB' is larger than image size: '10 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
 
@@ -73,7 +73,7 @@ gcloud compute firewall-rules create chaos-engine-inbound \
 ```
 
 ```tab="expected command"
-Creating firewall...⠧Created [https://www.googleapis.com/compute/v1/projects/gemalto-cspeng/global/firewalls/chaos-engine-inbound].
+Creating firewall...⠧Created [https://www.googleapis.com/compute/v1/projects/xxx/global/firewalls/chaos-engine-inbound].
 Creating firewall...done.                                                                                            
 NAME                  NETWORK  DIRECTION  PRIORITY  ALLOW                       DENY  DISABLED
 chaos-engine-inbound  default  INGRESS    1000      tcp:8080,tcp:8200,tcp:9000        False
