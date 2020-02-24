@@ -251,3 +251,4 @@ At the end of this exercise you should have:
 
 - Basic understanding of the GCP console features and layout
 - Chaos Engine injector machine up and running
+- Chaos Engine framework deployed
