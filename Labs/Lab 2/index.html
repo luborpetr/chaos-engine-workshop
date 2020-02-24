@@ -420,8 +420,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#verify-chaos-engine-deployment" title="Verify Chaos Engine deployment" class="md-nav__link">
+    Verify Chaos Engine deployment
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-summary" title="Lab summary" class="md-nav__link">
+    Lab summary
+  </a>
   
 </li>
       
@@ -433,6 +447,30 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab 3/" title="Lab 3: Deploy Chaos Engine Victim" class="md-nav__link">
+      Lab 3: Deploy Chaos Engine Victim
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab 4/" title="Lab 4: Finalise Framework Configuration" class="md-nav__link">
+      Lab 4: Finalise Framework Configuration
+    </a>
   </li>
 
         
@@ -551,8 +589,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#verify-chaos-engine-deployment" title="Verify Chaos Engine deployment" class="md-nav__link">
+    Verify Chaos Engine deployment
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-summary" title="Lab summary" class="md-nav__link">
+    Lab summary
+  </a>
   
 </li>
       
@@ -621,7 +673,7 @@ instances create chaos-engine <span class="se">\</span>
 <input name="__tabs_2" type="radio" id="__tab_2_1" />
 <label for="__tab_2_1">expected output</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="n">WARNING</span><span class="o">:</span> <span class="n">You</span> <span class="n">have</span> <span class="n">selected</span> <span class="n">a</span> <span class="n">disk</span> <span class="n">size</span> <span class="n">of</span> <span class="n">under</span> <span class="o">[</span><span class="mi">200</span><span class="n">GB</span><span class="o">].</span> <span class="n">This</span> <span class="n">may</span> <span class="n">result</span> <span class="k">in</span> <span class="n">poor</span> <span class="n">I</span><span class="sr">/O performance. For more information, see: https://developers.google.com/compute/docs/</span><span class="n">disks</span><span class="err">#</span><span class="n">performance</span><span class="o">.</span>
-<span class="n">Created</span> <span class="o">[</span><span class="n">https</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="na">googleapis</span><span class="o">.</span><span class="na">com</span><span class="sr">/compute/v1/projects/gemalto-cspeng/zones/europe-west2-c/instances/</span><span class="n">chaos</span><span class="o">-</span><span class="n">engine</span><span class="o">].</span>
+<span class="n">Created</span> <span class="o">[</span><span class="n">https</span><span class="o">://</span><span class="n">www</span><span class="o">.</span><span class="na">googleapis</span><span class="o">.</span><span class="na">com</span><span class="sr">/compute/v1/projects/xxxx/zones/europe-west2-c/instances/</span><span class="n">chaos</span><span class="o">-</span><span class="n">engine</span><span class="o">].</span>
 <span class="n">WARNING</span><span class="o">:</span> <span class="n">Some</span> <span class="n">requests</span> <span class="n">generated</span> <span class="n">warnings</span><span class="o">:</span>
  <span class="o">-</span> <span class="n">Disk</span> <span class="n">size</span><span class="o">:</span> <span class="s1">&#39;20 GB&#39;</span> <span class="k">is</span> <span class="n">larger</span> <span class="n">than</span> <span class="n">image</span> <span class="n">size</span><span class="o">:</span> <span class="s1">&#39;10 GB&#39;</span><span class="o">.</span> <span class="n">You</span> <span class="n">might</span> <span class="n">need</span> <span class="n">to</span> <span class="n">resize</span> <span class="n">the</span> <span class="n">root</span> <span class="n">repartition</span> <span class="n">manually</span> <span class="k">if</span> <span class="n">the</span> <span class="n">operating</span> <span class="n">system</span> <span class="n">does</span> <span class="n">not</span> <span class="n">support</span> <span class="n">automatic</span> <span class="n">resizing</span><span class="o">.</span> <span class="n">See</span> <span class="n">https</span><span class="o">://</span><span class="n">cloud</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">com</span><span class="sr">/compute/docs/disks/</span><span class="n">add</span><span class="o">-</span><span class="n">persistent</span><span class="o">-</span><span class="n">disk</span><span class="err">#</span><span class="n">resize_pd</span> <span class="k">for</span> <span class="n">details</span><span class="o">.</span>
 
@@ -646,7 +698,7 @@ That could be done by following command:</p>
 </pre></div></div>
 <input name="__tabs_3" type="radio" id="__tab_3_1" />
 <label for="__tab_3_1">expected command</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">Creating firewall...⠧Created [https://www.googleapis.com/compute/v1/projects/gemalto-cspeng/global/firewalls/chaos-engine-inbound].</span>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">Creating firewall...⠧Created [https://www.googleapis.com/compute/v1/projects/xxx/global/firewalls/chaos-engine-inbound].</span>
 <span class="err">Creating firewall...done.                                                                                            </span>
 <span class="err">NAME                  NETWORK  DIRECTION  PRIORITY  ALLOW                       DENY  DISABLED</span>
 <span class="err">chaos-engine-inbound  default  INGRESS    1000      tcp:8080,tcp:8200,tcp:9000        False</span>
@@ -694,8 +746,11 @@ That could be done by following command:</p>
 <span class="err">CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</span>
 </pre></div></div>
 </div>
-<p>If the output looks like below, you need to adjust your groups by running <code>usermod -a -G docker $USER</code> and relogin.</p>
+<p>If the output looks like below, your user is not in <code>docker</code> group.
 <div class="codehilite"><pre><span></span><span class="err">Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied</span>
+</pre></div></p>
+<p>Adjust your groups and relogin</p>
+<div class="codehilite"><pre><span></span>sudo usermod -a -G docker <span class="nv">$USER</span>
 </pre></div>
 
 <h4 id="check-docker-compose">Check docker-compose</h4>
@@ -736,20 +791,79 @@ From your Chaos Engine VM run:</p>
 </div>
 <h3 id="adjust-configuration">Adjust configuration</h3>
 <p>On the Chaos Engine machine go to <code>chaos-engine</code> directory and replace <code>docker-compose.yml</code> with a file from the workshop repo:
-<div class="codehilite"><pre><span></span> wget https://raw.githubusercontent.com/luborpetr/chaos-engine-workshop/master/docker/docker-compose.yml .
+<div class="codehilite"><pre><span></span> wget -O docker-compose.yml https://raw.githubusercontent.com/luborpetr/chaos-engine-workshop/master/docker/docker-compose.yml
 </pre></div></p>
 <h3 id="pull-docker-images">Pull Docker Images</h3>
-<div class="codehilite"><pre><span></span>lubor@chaos-engine:~/chaos-engine$ docker-compose pull
-Pulling vault        ... <span class="k">done</span>
+<p>Pull Chaos Engine image from DockerHub.</p>
+<div class="superfences-tabs">
+<input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
+<label for="__tab_8_0">shell command</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>docker-compose pull
+</pre></div></div>
+<input name="__tabs_8" type="radio" id="__tab_8_1" />
+<label for="__tab_8_1">expected output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Pulling vault        ... <span class="k">done</span>
 Pulling vault-loader ... <span class="k">done</span>
 Pulling chaosengine  ... <span class="k">done</span>
-</pre></div>
-
-<div class="codehilite"><pre><span></span>lubor@chaos-engine:~/chaos-engine$ docker images
-REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
+</pre></div></div>
+</div>
+<p>Verify you pulled image tagged <code>stable</code>.</p>
+<div class="superfences-tabs">
+<input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
+<label for="__tab_9_0">shell command</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>docker images
+</pre></div></div>
+<input name="__tabs_9" type="radio" id="__tab_9_1" />
+<label for="__tab_9_1">expected output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
 thalesgroup/chaos-engine   stable              46c560a17d9a        <span class="m">2</span> days ago          304MB
 vault                      latest              0542f65ae3d0        <span class="m">4</span> weeks ago         140MB
-</pre></div>
+</pre></div></div>
+</div>
+<h3 id="verify-chaos-engine-deployment">Verify Chaos Engine deployment</h3>
+<p>Start Chaos Engine framework using <code>docker-compose</code>.</p>
+<div class="superfences-tabs">
+<input name="__tabs_10" type="radio" id="__tab_10_0" checked="checked" />
+<label for="__tab_10_0">shell command</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>docker-compose up
+</pre></div></div>
+<input name="__tabs_10" type="radio" id="__tab_10_1" />
+<label for="__tab_10_1">expected output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;@timestamp&quot;</span><span class="p">:</span><span class="s2">&quot;2020-02-24T08:37:45.313Z&quot;</span><span class="p">,</span><span class="nt">&quot;@version&quot;</span><span class="p">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="s2">&quot;There are no platforms enabled&quot;</span><span class="p">,</span><span class="nt">&quot;logger_name&quot;</span><span class="p">:</span><span class="s2">&quot;com.thales.chaos.experiment.ExperimentManager&quot;</span><span class="p">,</span><span class="nt">&quot;thread_name&quot;</span><span class="p">:</span><span class="s2">&quot;chaos-1&quot;</span><span class="p">,</span><span class="nt">&quot;level&quot;</span><span class="p">:</span><span class="s2">&quot;WARN&quot;</span><span class="p">,</span><span class="nt">&quot;level_value&quot;</span><span class="p">:</span><span class="mi">30000</span><span class="p">,</span><span class="nt">&quot;env&quot;</span><span class="p">:</span><span class="s2">&quot;WORKSHOP&quot;</span><span class="p">,</span><span class="nt">&quot;chaos-host&quot;</span><span class="p">:</span><span class="s2">&quot;904cbd65faa1@gcp:chaos-engine:projects/203123834228/zones/europe-west2-c&quot;</span><span class="p">}</span>
+</pre></div></div>
+</div>
+<p>Verify that Chaos Engine endpoints are listening. From you local machine visit following URLS:</p>
+<p>First URL is a Chaos Engine API endpoint. After we complete Engine configuration the OpenAPI UI will be exposed there.
+But know expected output is and <code>404</code>.</p>
+<div class="superfences-tabs">
+<input name="__tabs_11" type="radio" id="__tab_11_0" checked="checked" />
+<label for="__tab_11_0">shell command</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>http://<span class="si">${</span><span class="nv">CHAOS_ENGINE_IP</span><span class="si">}</span>:8080
+</pre></div></div>
+<input name="__tabs_11" type="radio" id="__tab_11_1" />
+<label for="__tab_11_1">expected output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Whitelabel Error Page
+This application has no explicit mapping <span class="k">for</span> /error, so you are seeing this as a fallback.
+</pre></div></div>
+</div>
+<p>Second URL is Vault UI. You should be able to sing in using token <code>00000000-0000-0000-0000-000000000000</code>.</p>
+<div class="superfences-tabs">
+<input name="__tabs_12" type="radio" id="__tab_12_0" checked="checked" />
+<label for="__tab_12_0">shell command</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>http://<span class="si">${</span><span class="nv">CHAOS_ENGINE_IP</span><span class="si">}</span>:8200
+</pre></div></div>
+<input name="__tabs_12" type="radio" id="__tab_12_1" />
+<label for="__tab_12_1">expected output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>Vault sign in page
+</pre></div></div>
+</div>
+<h2 id="lab-summary">Lab summary</h2>
+<p>At the end of this exercise you should have:</p>
+<ul>
+<li>Basic understanding of the GCP console features and layout</li>
+<li>Chaos Engine injector machine up and running</li>
+<li>Chaos Engine framework deployed</li>
+</ul>
                 
                   
                 
@@ -784,6 +898,20 @@ vault                      latest              0542f65ae3d0        <span class="
             </div>
           </a>
         
+        
+          <a href="../Lab 3/" title="Lab 3: Deploy Chaos Engine Victim" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lab 3: Deploy Chaos Engine Victim
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
