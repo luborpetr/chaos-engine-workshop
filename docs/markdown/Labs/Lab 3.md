@@ -87,3 +87,25 @@ nginx-8779fd9dc-22hqf     1/1     Running   0          76m
 nginx-8779fd9dc-pt66s     1/1     Running   0          77m
 nginx-8779fd9dc-zn94b     1/1     Running   0          76m
 ```
+
+### Configure RBAC
+In the last step we need to create a service account that will be used by the Engine and do a role bindings.
+All can be do by simply applying a template from the workshop repo.
+
+```bash tab="shell command"
+kubectl apply -f kubernetes/rbac.yml
+```
+
+```tab="expected output"
+role.rbac.authorization.k8s.io/chaos-engine-role created
+serviceaccount/chaos-engine-serviceaccount created
+rolebinding.rbac.authorization.k8s.io/chaos-engine-rolebinding created
+```
+
+## Lab summary
+
+At the end of this exercise you should have:
+
+- Running Kubernetes cluster
+- Deployed dummy applications
+- RBAC configured
