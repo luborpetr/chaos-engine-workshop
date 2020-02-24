@@ -210,4 +210,44 @@ thalesgroup/chaos-engine   stable              46c560a17d9a        2 days ago   
 vault                      latest              0542f65ae3d0        4 weeks ago         140MB
 ```
 
-`
+### Verify Chaos Engine deployment
+Start Chaos Engine framework using `docker-compose`.
+
+```bash tab="shell command"
+docker-compose up
+```
+
+```json tab="expected output"
+{"@timestamp":"2020-02-24T08:37:45.313Z","@version":"1","message":"There are no platforms enabled","logger_name":"com.thales.chaos.experiment.ExperimentManager","thread_name":"chaos-1","level":"WARN","level_value":30000,"env":"WORKSHOP","chaos-host":"904cbd65faa1@gcp:chaos-engine:projects/203123834228/zones/europe-west2-c"}
+```
+
+Verify that Chaos Engine endpoints are listening. From you local machine visit following URLS:
+
+First URL is a Chaos Engine API endpoint. After we complete Engine configuration the OpenAPI UI will be exposed there.
+But know expected output is and `404`.
+
+```bash tab="shell command"
+http://${CHAOS_ENGINE_IP}:8080
+```
+
+```bash tab="expected output"
+Whitelabel Error Page
+This application has no explicit mapping for /error, so you are seeing this as a fallback.
+```
+
+Second URL is Vault UI. You should be able to sing in using token `00000000-0000-0000-0000-000000000000`.
+
+```bash tab="shell command"
+http://${CHAOS_ENGINE_IP}:8200
+```
+
+```bash tab="expected output"
+Vault sign in page
+```
+
+## Lab summary
+
+At the end of this exercise you should have:
+
+- Basic understanding of the GCP console features and layout
+- Chaos Engine injector machine up and running
