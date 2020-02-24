@@ -19,10 +19,10 @@ spec:
       containers:
         - name: nginx
           image: nginx:latest
-      resources:
-        limits:
-          cpu: 100m
-          memory: 128Mi
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
 
 ---
 apiVersion: apps/v1
@@ -45,6 +45,6 @@ spec:
       containers:
         - name: apache
           image: httpd:latest
-      resources:
-        limits:
-          memory: 128Mi
+          resources:
+            limits:
+              memory: 128Mi
