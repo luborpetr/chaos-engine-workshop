@@ -1,0 +1,69 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: chaos-engine-role
+  namespace: default
+rules:
+  - apiGroups:
+      - apps
+    resources:
+      - daemonsets
+      - daemonsets/status
+      - deployments
+      - deployments/status
+      - replicasets
+      - replicasets/status
+      - statefulsets
+      - statefulsets/status
+    verbs:
+      - get
+      - list
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+    verbs:
+      - delete
+
+  - apiGroups:
+      - ""
+    resources:
+      - pods
+      - pods/status
+      - replicationcontrollers/status
+    verbs:
+      - get
+      - list
+
+  - apiGroups:
+      - ""
+    resources:
+      - pods/exec
+    verbs:
+      - create
+      - get
+
+---
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: chaos-engine-serviceaccount
+  namespace: default
+
+---
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: chaos-engine-rolebinding
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: chaos-engine-role
+subjects:
+  - kind: ServiceAccount
+    name: chaos-engine-serviceaccount
+    namespace: default
