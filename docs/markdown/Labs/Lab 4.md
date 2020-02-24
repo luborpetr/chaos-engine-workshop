@@ -90,6 +90,129 @@ docker-compose up
 {"@timestamp":"2020-02-24T21:17:05.723Z","@version":"1","message":"Kubernetes Platform created","logger_name":"com.thales.chaos.platform.impl.KubernetesPlatform","thread_name":"main","level":"INFO","level_value":20000,"env":"WORKSHOP","chaos-host":"b8dcfa2ac884@gcp:chaos-engine:projects/203123834228/zones/europe-west2-c"}
 ```
 
+
+## Verify setup
+
+Visit Chaos Engine API endpoint at `http://xxx.xxx.xxx.xxx:8080/swagger-ui.html` You should see an OpenAPI UI.
+Go to the `Platform` section and invoke `Get Platforms`. If the output contains 6 targets your environment is ready for experiments.
+
+```bash tab="shell command"
+curl -X GET "http://xxx.xxx.xxx.xxx:8080/platform" 
+```
+
+```json tab="expected output"
+[
+  {
+    "roster": [
+      {
+        "shellCapabilities": {},
+        "uuid": "a41694a5-56f1-11ea-90b5-42010a8400d8",
+        "podName": "nginx-8779fd9dc-zn94b",
+        "namespace": "default",
+        "ownerKind": "REPLICA_SET",
+        "ownerName": "nginx-8779fd9dc",
+        "targetedSubcontainer": "nginx",
+        "simpleName": "nginx-8779fd9dc-zn94b (default)",
+        "aggregationIdentifier": "nginx-8779fd9dc",
+        "cattle": true,
+        "containerType": "KubernetesPodContainer",
+        "identity": 2084787268,
+        "experimentStartTime": null,
+        "knownMissingCapabilities": []
+      },
+      {
+        "shellCapabilities": {},
+        "uuid": "9da33aca-56f1-11ea-90b5-42010a8400d8",
+        "podName": "nginx-8779fd9dc-pt66s",
+        "namespace": "default",
+        "ownerKind": "REPLICA_SET",
+        "ownerName": "nginx-8779fd9dc",
+        "targetedSubcontainer": "nginx",
+        "simpleName": "nginx-8779fd9dc-pt66s (default)",
+        "aggregationIdentifier": "nginx-8779fd9dc",
+        "cattle": true,
+        "containerType": "KubernetesPodContainer",
+        "identity": 2538209780,
+        "experimentStartTime": null,
+        "knownMissingCapabilities": []
+      },
+      {
+        "shellCapabilities": {},
+        "uuid": "9dba6965-56f1-11ea-90b5-42010a8400d8",
+        "podName": "apache-7c99b8d54f-ncwcn",
+        "namespace": "default",
+        "ownerKind": "REPLICA_SET",
+        "ownerName": "apache-7c99b8d54f",
+        "targetedSubcontainer": "apache",
+        "simpleName": "apache-7c99b8d54f-ncwcn (default)",
+        "aggregationIdentifier": "apache-7c99b8d54f",
+        "cattle": true,
+        "containerType": "KubernetesPodContainer",
+        "identity": 1977081181,
+        "experimentStartTime": null,
+        "knownMissingCapabilities": []
+      },
+      {
+        "shellCapabilities": {},
+        "uuid": "a5ba334a-56f1-11ea-90b5-42010a8400d8",
+        "podName": "nginx-8779fd9dc-22hqf",
+        "namespace": "default",
+        "ownerKind": "REPLICA_SET",
+        "ownerName": "nginx-8779fd9dc",
+        "targetedSubcontainer": "nginx",
+        "simpleName": "nginx-8779fd9dc-22hqf (default)",
+        "aggregationIdentifier": "nginx-8779fd9dc",
+        "cattle": true,
+        "containerType": "KubernetesPodContainer",
+        "identity": 3217786026,
+        "experimentStartTime": null,
+        "knownMissingCapabilities": []
+      },
+      {
+        "shellCapabilities": {},
+        "uuid": "9dbbddd4-56f1-11ea-90b5-42010a8400d8",
+        "podName": "apache-7c99b8d54f-bkk2w",
+        "namespace": "default",
+        "ownerKind": "REPLICA_SET",
+        "ownerName": "apache-7c99b8d54f",
+        "targetedSubcontainer": "apache",
+        "simpleName": "apache-7c99b8d54f-bkk2w (default)",
+        "aggregationIdentifier": "apache-7c99b8d54f",
+        "cattle": true,
+        "containerType": "KubernetesPodContainer",
+        "identity": 3099393506,
+        "experimentStartTime": null,
+        "knownMissingCapabilities": []
+      },
+      {
+        "shellCapabilities": {},
+        "uuid": "9db2b330-56f1-11ea-90b5-42010a8400d8",
+        "podName": "apache-7c99b8d54f-g8k6g",
+        "namespace": "default",
+        "ownerKind": "REPLICA_SET",
+        "ownerName": "apache-7c99b8d54f",
+        "targetedSubcontainer": "apache",
+        "simpleName": "apache-7c99b8d54f-g8k6g (default)",
+        "aggregationIdentifier": "apache-7c99b8d54f",
+        "cattle": true,
+        "containerType": "KubernetesPodContainer",
+        "identity": 650070269,
+        "experimentStartTime": null,
+        "knownMissingCapabilities": []
+      }
+    ],
+    "experimentTimes": [],
+    "namespace": "default",
+    "platformLevel": "PAAS",
+    "platformHealth": "OK",
+    "apiStatus": "OK",
+    "nextChaosTime": "2020-02-24T21:41:18.547Z",
+    "platformType": "KubernetesPlatform",
+    "destructionProbability": 0.2
+  }
+]
+```
+
 ## Lab summary
 
 At the end of this exercise you should have:
