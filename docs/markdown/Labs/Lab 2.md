@@ -125,11 +125,18 @@ user@chaos-engine:~$ docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
-If the output looks like below, you need to adjust your groups by running `usermod -a -G docker $USER` and relogin.
-
+If the output looks like below, your user is not in `docker` group.
 ```
 Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get http://%2Fvar%2Frun%2Fdocker.sock/v1.40/containers/json: dial unix /var/run/docker.sock: connect: permission denied
 ```
+
+Adjust your groups and relogin
+
+```bash
+sudo usermod -a -G docker $USER
+```
+
+
 
 #### Check docker-compose
 
@@ -173,24 +180,34 @@ Checking connectivity... done.
 ### Adjust configuration
 On the Chaos Engine machine go to `chaos-engine` directory and replace `docker-compose.yml` with a file from the workshop repo:
 ```bash
- wget https://raw.githubusercontent.com/luborpetr/chaos-engine-workshop/master/docker/docker-compose.yml .
+ wget -O docker-compose.yml https://raw.githubusercontent.com/luborpetr/chaos-engine-workshop/master/docker/docker-compose.yml
 ```
 
 
 ### Pull Docker Images
 
-```bash
-lubor@chaos-engine:~/chaos-engine$ docker-compose pull
+Pull Chaos Engine image from DockerHub.
+
+```bash tab="shell command"
+docker-compose pull
+```
+
+```bash tab="expected output"
 Pulling vault        ... done
 Pulling vault-loader ... done
 Pulling chaosengine  ... done
 ```
 
-```bash
-lubor@chaos-engine:~/chaos-engine$ docker images
+Verify you pulled image tagged `stable`.
+
+```bash tab="shell command"
+docker images
+```
+
+```bash tab="expected output"
 REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
 thalesgroup/chaos-engine   stable              46c560a17d9a        2 days ago          304MB
 vault                      latest              0542f65ae3d0        4 weeks ago         140MB
 ```
 
-
+`
