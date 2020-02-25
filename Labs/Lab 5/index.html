@@ -38,7 +38,7 @@
     
     
       
-        <title>Lab 1: Activate your GCP console - Chaos Engine Workshop</title>
+        <title>Lab 5: Run Experiments - Chaos Engine Workshop</title>
       
     
     
@@ -87,7 +87,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lab-1-activate-your-gcp-console" tabindex="1" class="md-skip">
+      <a href="#lab-5-run-experiments" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -113,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Lab 1: Activate your GCP console
+                Lab 5: Run Experiments
               
             </span>
           
@@ -202,7 +202,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Labs" class="md-tabs__link md-tabs__link--active">
+        <a href="../Lab 1/" title="Labs" class="md-tabs__link md-tabs__link--active">
           Labs
         </a>
       
@@ -290,20 +290,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Lab 1: Activate your GCP console" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../Lab 1/" title="Lab 1: Activate your GCP console" class="md-nav__link">
       Lab 1: Activate your GCP console
     </a>
-    
   </li>
 
         
@@ -347,11 +338,89 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../Lab 5/" title="Lab 5: Run Experiments" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Lab 5: Run Experiments
+      </label>
+    
+    <a href="./" title="Lab 5: Run Experiments" class="md-nav__link md-nav__link--active">
       Lab 5: Run Experiments
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-defined-experiments" title="User defined experiments" class="md-nav__link">
+    User defined experiments
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-own-experiment-suite" title="Create own experiment suite" class="md-nav__link">
+    Create own experiment suite
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-target" title="One target" class="md-nav__link">
+    One target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-targets" title="Multiple targets" class="md-nav__link">
+    Multiple targets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-experiments" title="Random experiments" class="md-nav__link">
+    Random experiments
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -377,6 +446,62 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#user-defined-experiments" title="User defined experiments" class="md-nav__link">
+    User defined experiments
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-own-experiment-suite" title="Create own experiment suite" class="md-nav__link">
+    Create own experiment suite
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-target" title="One target" class="md-nav__link">
+    One target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-targets" title="Multiple targets" class="md-nav__link">
+    Multiple targets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-experiments" title="Random experiments" class="md-nav__link">
+    Random experiments
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -387,15 +512,88 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/gemalto/chaos-engine/edit/master/docs/Labs/Lab 1.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/gemalto/chaos-engine/edit/master/docs/Labs/Lab 5.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lab-1-activate-your-gcp-console">Lab 1: Activate your GCP console</h1>
-<ol>
-<li>Open <code>Chrome</code> web browser and go to <a href="https://console.cloud.google.com/">GCP console</a></li>
-<li><code>Activate Cloud Shell</code> by clinking on the shell icon in the upper right corner of the Console</li>
-<li>I will take a while until your <code>Cloud Shell</code> instance gets provisioned</li>
-</ol>
+                <h1 id="lab-5-run-experiments">Lab 5: Run Experiments</h1>
+<p>In this lab we will learn how to construct and run experiments. </p>
+<p>In general there are two types of experiments: </p>
+<ul>
+<li>
+<p>User defined experiments - user can define list of targets as well as experiment methods</p>
+</li>
+<li>
+<p>Random experiments - the Engine randomly selects a target and experiment method</p>
+</li>
+</ul>
+<h2 id="user-defined-experiments">User defined experiments</h2>
+<p>Let's start with user defined experiments. Go to <code>http://${CHAOS_ENGINE_IP}:8080/swagger-ui.html</code> and find <code>/experiment/build/</code> API endpoint.
+The Chaos Engine accepts experiment definition in JSON format. The JSON object is called <code>experiment suite</code>.</p>
+<p>The experiment suite definition has following format:</p>
+<ul>
+<li>
+<p><code>platformType</code> - defines on which level we are going to run our experiments. Only one <code>platformType</code> can be specified in the suite</p>
+</li>
+<li>
+<p><code>experimentCriteria</code> - defines target selection criteria</p>
+</li>
+<li>
+<p><code>containerIdentifier</code> - depending on the configuration <code>containerIdentifier</code> can be identifier of individual container or identifier of a logical container group.</p>
+</li>
+<li>
+<p><code>experimentMethods</code> - experiment method name</p>
+</li>
+<li>
+<p><code>specificContainerTargets</code> - defines concrete targets of experiments</p>
+</li>
+</ul>
+<h3 id="create-own-experiment-suite">Create own experiment suite</h3>
+<p>In previous labs we deployed Kubernetes cluster together with dummy test applications. </p>
+<h4 id="one-target">One target</h4>
+<p>Let's define new experiment suite and target <code>nginx</code> deployment. 
+Following exmaple 
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;platformType&quot;</span><span class="p">:</span><span class="s2">&quot;KubernetesPlatform&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;experimentCriteria&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;containerIdentifier&quot;</span><span class="p">:</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;experimentMethods&quot;</span><span class="p">:[</span>
+            <span class="s2">&quot;deletePod&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;specificContainerTargets&quot;</span><span class="p">:[</span>
+
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div></p>
+<h4 id="multiple-targets">Multiple targets</h4>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;platformType&quot;</span><span class="p">:</span><span class="s2">&quot;KubernetesPlatform&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;experimentCriteria&quot;</span><span class="p">:[</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;containerIdentifier&quot;</span><span class="p">:</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;experimentMethods&quot;</span><span class="p">:[</span>
+            <span class="s2">&quot;deletePod&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;specificContainerTargets&quot;</span><span class="p">:[</span>
+
+         <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="nt">&quot;containerIdentifier&quot;</span><span class="p">:</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;experimentMethods&quot;</span><span class="p">:[</span>
+            <span class="s2">&quot;cpuBurn.sh&quot;</span><span class="p">,</span><span class="s2">&quot;memoryConsumer.sh&quot;</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;specificContainerTargets&quot;</span><span class="p">:[</span>
+
+         <span class="p">]</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="random-experiments">Random experiments</h2>
                 
                   
                 
@@ -416,7 +614,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Lab 4/" title="Lab 4: Finalise Framework Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -425,25 +623,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Lab 4: Finalise Framework Configuration
               </span>
             </div>
           </a>
         
-        
-          <a href="../Lab 2/" title="Lab 2: Install Chaos Engine" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Lab 2: Install Chaos Engine
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>

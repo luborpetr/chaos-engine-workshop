@@ -407,6 +407,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab 5/" title="Lab 5: Run Experiments" class="md-nav__link">
+      Lab 5: Run Experiments
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -527,7 +539,7 @@
   <span class="nt">&quot;automatedMode&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
   <span class="nt">&quot;chaos.security.enabled&quot;</span><span class="p">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
   <span class="nt">&quot;kubernetes&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;kubernetes.url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://xxx.xxx.xxx.xxx&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;kubernetes.url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://{KUBERNETES_CLUSTER_IP}&quot;</span><span class="p">,</span>
   <span class="nt">&quot;kubernetes.token&quot;</span><span class="p">:</span> <span class="s2">&quot;eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9....&quot;</span><span class="p">,</span>
   <span class="nt">&quot;kubernetes.averageMillisPerExperiment&quot;</span><span class="p">:</span> <span class="s2">&quot;30000&quot;</span>
 <span class="p">}</span>
@@ -580,12 +592,12 @@
 </pre></div></div>
 </div>
 <h2 id="verify-setup">Verify setup</h2>
-<p>Visit Chaos Engine API endpoint at <code>http://xxx.xxx.xxx.xxx:8080/swagger-ui.html</code> You should see an OpenAPI UI.
+<p>Visit Chaos Engine API endpoint at <code>http://${CHAOS_ENGINE_IP}:8080/swagger-ui.html</code> You should see an OpenAPI UI.
 Go to the <code>Platform</code> section and invoke <code>Get Platforms</code>. If the output contains 6 targets your environment is ready for experiments.</p>
 <div class="superfences-tabs">
 <input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
 <label for="__tab_4_0">shell command</label>
-<div class="superfences-content"><div class="codehilite"><pre><span></span>curl -X GET <span class="s2">&quot;http://xxx.xxx.xxx.xxx:8080/platform&quot;</span> 
+<div class="superfences-content"><div class="codehilite"><pre><span></span>curl -X GET <span class="s2">&quot;http://</span><span class="si">${</span><span class="nv">CHAOS_ENGINE_IP</span><span class="si">}</span><span class="s2">:8080/platform&quot;</span> 
 </pre></div></div>
 <input name="__tabs_4" type="radio" id="__tab_4_1" />
 <label for="__tab_4_1">expected output</label>
@@ -740,6 +752,20 @@ Go to the <code>Platform</code> section and invoke <code>Get Platforms</code>. I
             </div>
           </a>
         
+        
+          <a href="../Lab 5/" title="Lab 5: Run Experiments" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lab 5: Run Experiments
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
