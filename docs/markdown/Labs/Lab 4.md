@@ -38,7 +38,7 @@ In order to activate necessary Chaos Engine modules we need to define following 
   "automatedMode": "false",
   "chaos.security.enabled": "false",
   "kubernetes": "",
-  "kubernetes.url": "https://xxx.xxx.xxx.xxx",
+  "kubernetes.url": "https://{KUBERNETES_CLUSTER_IP}",
   "kubernetes.token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9....",
   "kubernetes.averageMillisPerExperiment": "30000"
 }
@@ -93,11 +93,11 @@ docker-compose up
 
 ## Verify setup
 
-Visit Chaos Engine API endpoint at `http://xxx.xxx.xxx.xxx:8080/swagger-ui.html` You should see an OpenAPI UI.
+Visit Chaos Engine API endpoint at `http://${CHAOS_ENGINE_IP}:8080/swagger-ui.html` You should see an OpenAPI UI.
 Go to the `Platform` section and invoke `Get Platforms`. If the output contains 6 targets your environment is ready for experiments.
 
 ```bash tab="shell command"
-curl -X GET "http://xxx.xxx.xxx.xxx:8080/platform" 
+curl -X GET "http://${CHAOS_ENGINE_IP}:8080/platform" 
 ```
 
 ```json tab="expected output"
