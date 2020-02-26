@@ -13,8 +13,7 @@ services:
       VAULT_SCHEME: "http"
       VAULT_HOST: "vault"
       VAULT_PORT: "8200"
-      VAULT_10: "true"
-      spring_profiles_active: "dev"
+      spring_profiles_active: "DEVELOPMENT"
       DEPLOYMENT_ENVIRONMENT: "WORKSHOP"
     depends_on:
       - vault-loader
