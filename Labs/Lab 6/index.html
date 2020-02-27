@@ -406,9 +406,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slack" title="Slack" class="md-nav__link">
-    Slack
+  <a href="#notification-modules" title="Notification Modules" class="md-nav__link">
+    Notification Modules
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xmpp-module" title="XMPP Module" class="md-nav__link">
+    XMPP Module
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-test-xmpp-server" title="Deploy test XMPP server" class="md-nav__link">
+    Deploy test XMPP server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-xmpp-server" title="Start XMPP server" class="md-nav__link">
+    Start XMPP server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust-configuration" title="Adjust configuration" class="md-nav__link">
+    Adjust configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provision-test-users" title="Provision test users" class="md-nav__link">
+    Provision test users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-a-jabber-client" title="Connect a jabber client" class="md-nav__link">
+    Connect a jabber client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-chaos-engine-configuration" title="Update Chaos Engine configuration" class="md-nav__link">
+    Update Chaos Engine configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -420,6 +487,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab 7/" title="Lab 7: Clean up" class="md-nav__link">
+      Lab 7: Clean up
+    </a>
   </li>
 
         
@@ -476,9 +555,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slack" title="Slack" class="md-nav__link">
-    Slack
+  <a href="#notification-modules" title="Notification Modules" class="md-nav__link">
+    Notification Modules
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xmpp-module" title="XMPP Module" class="md-nav__link">
+    XMPP Module
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deploy-test-xmpp-server" title="Deploy test XMPP server" class="md-nav__link">
+    Deploy test XMPP server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-xmpp-server" title="Start XMPP server" class="md-nav__link">
+    Start XMPP server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjust-configuration" title="Adjust configuration" class="md-nav__link">
+    Adjust configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provision-test-users" title="Provision test users" class="md-nav__link">
+    Provision test users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connect-a-jabber-client" title="Connect a jabber client" class="md-nav__link">
+    Connect a jabber client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-chaos-engine-configuration" title="Update Chaos Engine configuration" class="md-nav__link">
+    Update Chaos Engine configuration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -558,7 +704,160 @@
 <div class="codehilite"><pre><span></span>https://<span class="si">${</span><span class="nv">CHAOS_ENGINE_IP</span><span class="si">}</span>:9000/en-US/app/search/chaos_overview
 </pre></div>
 
-<h2 id="slack">Slack</h2>
+<h2 id="notification-modules">Notification Modules</h2>
+<p>The Chaos Engine can send notifications to multiple channels. </p>
+<p>At the moment it supports:</p>
+<ul>
+<li>
+<p>Slack</p>
+</li>
+<li>
+<p>DataDog Event Stream</p>
+</li>
+<li>
+<p>XMPP / Jabber</p>
+</li>
+</ul>
+<p>For detail description of each notification channel and message content <a href="https://gemalto.github.io/chaos-engine/Logging_and_Reporting/Notifications/slack/">see documentation.</a></p>
+<h3 id="xmpp-module">XMPP Module</h3>
+<p>Let's activate XMPP module to better understand how it works.</p>
+<h4 id="deploy-test-xmpp-server">Deploy test XMPP server</h4>
+<p>We need to deploy a XMPP server who will be processing our notifications. </p>
+<h5 id="start-xmpp-server">Start XMPP server</h5>
+<p>Go to your Chaos Engine instance and run <code>ejabberd</code> server:</p>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">shell command</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span>docker run -it --rm --name ejabberd  <span class="se">\</span>
+    -p <span class="m">5222</span>:5222 <span class="se">\</span>
+    -p <span class="m">5269</span>:5269 <span class="se">\</span>
+    -p <span class="m">5443</span>:5443 <span class="se">\</span>
+    -p <span class="m">1883</span>:1883 <span class="se">\</span>
+    -p <span class="m">5280</span>:5280 ejabberd/ecs
+</pre></div></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">expected output</label>
+<div class="superfences-content"><div class="codehilite"><pre><span></span><span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">52.274868</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">critical</span><span class="p">]</span> <span class="n">Failed</span> <span class="n">to</span> <span class="n">set</span> <span class="nl">logging</span><span class="p">:</span> <span class="p">{</span><span class="n">error</span><span class="p">,</span>
+                           <span class="p">{</span><span class="n">handler_not_added</span><span class="p">,</span>
+                               <span class="p">{</span><span class="n">invalid_config</span><span class="p">,</span><span class="n">logger_std_h</span><span class="p">,</span>
+                                   <span class="cp">#{file =&gt;</span>
+                                         <span class="s">&quot;/home/ejabberd/logs/ejabberd.log&quot;</span><span class="p">}}}}</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">52.654284</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">configuration</span> <span class="n">from</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ejabberd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">ejabberd</span><span class="p">.</span><span class="n">yml</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">52.703112</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">ACME</span> <span class="n">directory</span> <span class="n">URL</span> <span class="nl">https</span><span class="p">:</span><span class="c1">//acme-v01.api.letsencrypt.org defined in option acme-&gt;ca_url is deprecated and was automatically replaced with https://acme-v02.api.letsencrypt.org/directory. Please adjust your configuration file accordingly. Hint: run `ejabberdctl dump-config` command to view current configuration as it is seen by ejabberd.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">52.703553</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">Option</span> <span class="err">&#39;</span><span class="n">log_rotate_date</span><span class="err">&#39;</span> <span class="n">is</span> <span class="n">deprecated</span> <span class="n">and</span> <span class="n">has</span> <span class="n">no</span> <span class="n">effect</span> <span class="n">anymore</span><span class="p">.</span> <span class="n">Please</span> <span class="n">remove</span> <span class="n">it</span> <span class="n">from</span> <span class="n">the</span> <span class="n">configuration</span><span class="p">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">52.703873</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">Option</span> <span class="err">&#39;</span><span class="n">log_rate_limit</span><span class="err">&#39;</span> <span class="n">is</span> <span class="n">deprecated</span> <span class="n">and</span> <span class="n">has</span> <span class="n">no</span> <span class="n">effect</span> <span class="n">anymore</span><span class="p">.</span> <span class="n">Please</span> <span class="n">remove</span> <span class="n">it</span> <span class="n">from</span> <span class="n">the</span> <span class="n">configuration</span><span class="p">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">53.466033</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Configuration</span> <span class="n">loaded</span> <span class="n">successfully</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">53.766025</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Building</span> <span class="n">language</span> <span class="n">translation</span> <span class="n">cache</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.377753</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">ejabberd_commands</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.477696</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">route</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.490312</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">route_multicast</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.515036</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">session</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.524188</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">session_counter</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.541913</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">s2s</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.550388</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">temporarily_blocked</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.568955</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">modules</span> <span class="k">for</span> <span class="n">localhost</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.570129</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">mod_register_ip</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.577959</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">sr_group</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.585388</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">sr_user</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.596781</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">privacy</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.628718</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">Mnesia</span> <span class="n">backend</span> <span class="k">for</span> <span class="n">mod_mam</span> <span class="n">is</span> <span class="n">not</span> <span class="nl">recommended</span><span class="p">:</span> <span class="n">it</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">limited</span> <span class="n">to</span> <span class="mi">2</span><span class="n">GB</span> <span class="n">and</span> <span class="n">often</span> <span class="n">gets</span> <span class="n">corrupted</span> <span class="n">when</span> <span class="n">reaching</span> <span class="n">this</span> <span class="n">limit</span><span class="p">.</span> <span class="n">SQL</span> <span class="n">backend</span> <span class="n">is</span> <span class="n">recommended</span><span class="p">.</span> <span class="n">Namely</span><span class="p">,</span> <span class="k">for</span> <span class="n">small</span> <span class="n">servers</span> <span class="n">SQLite</span> <span class="n">is</span> <span class="n">a</span> <span class="n">preferred</span> <span class="n">choice</span> <span class="n">because</span> <span class="n">it</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">very</span> <span class="n">easy</span> <span class="n">to</span> <span class="n">configure</span><span class="p">.</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.629141</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">archive_msg</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.640068</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">archive_prefs</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.685725</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">muc_room</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.694844</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">muc_registered</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.704680</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">muc_online_room</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.717231</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">vcard</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.726915</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">vcard_search</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.750776</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">motd</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.760577</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">motd_users</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.789235</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">bosh</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.797795</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">push_session</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.819676</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">roster</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.845965</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">roster_version</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.922432</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">last_activity</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.947673</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">offline_msg</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">54.998384</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">sip_session</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.038610</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">caps_features</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.048919</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">pubsub_last_item</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.059239</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">pubsub_index</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.073598</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">pubsub_node</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.084673</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">pubsub_state</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.093349</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">pubsub_item</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.108872</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">pubsub_orphan</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.117947</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">private_storage</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.145023</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">mqtt_pub</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.160187</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">mqtt_session</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.169008</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">mqtt_sub</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.193342</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Building</span> <span class="n">MQTT</span> <span class="n">cache</span> <span class="k">for</span> <span class="n">localhost</span><span class="p">,</span> <span class="n">this</span> <span class="n">may</span> <span class="n">take</span> <span class="n">a</span> <span class="k">while</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.212517</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">bytestream</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.228890</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">passwd</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.238541</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">ram</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">reg_users_counter</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.261166</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc_only</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">oauth_token</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.272232</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Creating</span> <span class="n">Mnesia</span> <span class="n">disc</span> <span class="n">table</span> <span class="err">&#39;</span><span class="n">oauth_client</span><span class="err">&#39;</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.328426</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Waiting</span> <span class="k">for</span> <span class="n">Mnesia</span> <span class="n">synchronization</span> <span class="n">to</span> <span class="n">complete</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.401107</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">Invalid</span> <span class="n">certificate</span> <span class="k">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ejabberd</span><span class="o">/</span><span class="n">conf</span><span class="o">/</span><span class="n">server</span><span class="p">.</span><span class="nl">pem</span><span class="p">:</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">53</span><span class="o">:</span> <span class="nb">self</span><span class="o">-</span><span class="kt">signed</span> <span class="n">certificate</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.620877</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">No</span> <span class="n">certificate</span> <span class="n">found</span> <span class="n">matching</span> <span class="n">conference</span><span class="p">.</span><span class="n">localhost</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.621084</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">No</span> <span class="n">certificate</span> <span class="n">found</span> <span class="n">matching</span> <span class="n">upload</span><span class="p">.</span><span class="n">localhost</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.621280</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">No</span> <span class="n">certificate</span> <span class="n">found</span> <span class="n">matching</span> <span class="n">proxy</span><span class="p">.</span><span class="n">localhost</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.621436</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">warning</span><span class="p">]</span> <span class="n">No</span> <span class="n">certificate</span> <span class="n">found</span> <span class="n">matching</span> <span class="n">pubsub</span><span class="p">.</span><span class="n">localhost</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.621592</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">ejabberd</span> <span class="mf">20.1.0</span> <span class="n">is</span> <span class="n">started</span> <span class="k">in</span> <span class="n">the</span> <span class="n">node</span> <span class="n">ejabberd</span><span class="mi">@97</span><span class="n">ac81e5b1ab</span> <span class="k">in</span> <span class="mf">3.36</span><span class="n">s</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.624763</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Start</span> <span class="n">accepting</span> <span class="n">TCP</span> <span class="n">connections</span> <span class="n">at</span> <span class="p">[</span><span class="o">::</span><span class="p">]</span><span class="o">:</span><span class="mi">5222</span> <span class="k">for</span> <span class="n">ejabberd_c2s</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.624997</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Start</span> <span class="n">accepting</span> <span class="n">TCP</span> <span class="n">connections</span> <span class="n">at</span> <span class="p">[</span><span class="o">::</span><span class="p">]</span><span class="o">:</span><span class="mi">5269</span> <span class="k">for</span> <span class="n">ejabberd_s2s_in</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.626317</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Start</span> <span class="n">accepting</span> <span class="n">TLS</span> <span class="n">connections</span> <span class="n">at</span> <span class="p">[</span><span class="o">::</span><span class="p">]</span><span class="o">:</span><span class="mi">5443</span> <span class="k">for</span> <span class="n">ejabberd_http</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.626556</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Start</span> <span class="n">accepting</span> <span class="n">TCP</span> <span class="n">connections</span> <span class="n">at</span> <span class="p">[</span><span class="o">::</span><span class="p">]</span><span class="o">:</span><span class="mi">5280</span> <span class="k">for</span> <span class="n">ejabberd_http</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.628548</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Start</span> <span class="n">accepting</span> <span class="n">TCP</span> <span class="n">connections</span> <span class="n">at</span> <span class="p">[</span><span class="o">::</span><span class="p">]</span><span class="o">:</span><span class="mi">1883</span> <span class="k">for</span> <span class="n">mod_mqtt</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mo">02</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mf">55.630578</span><span class="o">+</span><span class="mo">00</span><span class="o">:</span><span class="mo">00</span> <span class="p">[</span><span class="n">info</span><span class="p">]</span> <span class="n">Start</span> <span class="n">accepting</span> <span class="n">TCP</span> <span class="n">connections</span> <span class="n">at</span> <span class="mf">172.17.0.2</span><span class="o">:</span><span class="mi">7777</span> <span class="k">for</span> <span class="n">mod_proxy65_stream</span>
+</pre></div></div>
+</div>
+<h5 id="adjust-configuration">Adjust configuration</h5>
+<p>Add <code>${CHAOS_ENGINE_IP}</code> into the list of hosts in <code>ejabberd</code> config:
+<div class="codehilite"><pre><span></span>docker <span class="nb">exec</span> -it ejabberd vi /home/ejabberd/conf/ejabberd.yml
+</pre></div></p>
+<p>Reload server configuration
+<div class="codehilite"><pre><span></span>docker <span class="nb">exec</span> -it ejabberd bin/ejabberdctl reload_config
+</pre></div></p>
+<h5 id="provision-test-users">Provision test users</h5>
+<p>In the next step we are going to provision two users <code>chaos</code> and <code>test</code>. 
+<code>chaos</code> is an account to be used by the Chaos Engine. 
+<code>test</code> is a user who will receive notifications.</p>
+<div class="codehilite"><pre><span></span>docker <span class="nb">exec</span> -it ejabberd bin/ejabberdctl register <span class="nb">test</span> localhost <span class="nb">test</span>
+docker <span class="nb">exec</span> -it ejabberd bin/ejabberdctl register chaos localhost <span class="nb">test</span>
+
+docker <span class="nb">exec</span> -it ejabberd bin/ejabberdctl register <span class="nb">test</span> <span class="si">${</span><span class="nv">CHAOS_ENGINE_IP</span><span class="si">}</span> <span class="nb">test</span>
+docker <span class="nb">exec</span> -it ejabberd bin/ejabberdctl register chaos <span class="si">${</span><span class="nv">CHAOS_ENGINE_IP</span><span class="si">}</span> <span class="nb">test</span>
+</pre></div>
+
+<h4 id="connect-a-jabber-client">Connect a jabber client</h4>
+<p>Recommended client is <code>Pidgin</code> with XMPP plugin. If you don't have <code>Pidgin</code> installed or your organization blocks XMPP traffic you can used <code>finch</code> (<a href="https://developer.pidgin.im/wiki/Using%20Finch#HowdoIswitchbetweenwindows">finch cheat cheat</a>) that is installed on your chaos engine machine.</p>
+<p>Start your preferred client and and new account with following parameters:</p>
+<ul>
+<li>user: <code>test</code></li>
+<li>password: <code>test</code></li>
+<li>domain: <code>localhost</code></li>
+<li>server: <code>${CHAOS_ENGINE_IP}</code></li>
+</ul>
+<h4 id="update-chaos-engine-configuration">Update Chaos Engine configuration</h4>
+<p>Stop your Chaos Engine instance by running:</p>
+<div class="codehilite"><pre><span></span>docker-compose stop
+</pre></div>
+
+<p>Update <code>./developer-tools/vault-loader/vault-secrets.json</code> file in the Chaos Engine git repo with following parameters:</p>
+<div class="codehilite"><pre><span></span>  <span class="s2">&quot;xmpp.enabled&quot;</span><span class="err">:</span> <span class="s2">&quot;true&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;xmpp.user&quot;</span><span class="err">:</span> <span class="s2">&quot;chaos&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;xmpp.password&quot;</span> <span class="err">:</span> <span class="s2">&quot;test&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;xmpp.domain&quot;</span><span class="err">:</span> <span class="s2">&quot;localhost&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;xmpp.hostname&quot;</span><span class="err">:</span> <span class="s2">&quot;${CHAOS_ENGINE_IP}&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;xmpp.serverCertFingerprint&quot;</span><span class="err">:</span> <span class="s2">&quot;CERTSHA256:f9:16:59:0b:93:72:66:a4:9a:db:df:2a:7f:8b:a3:cf:44:2b:a2:31:a8:1a:72:f5:7d:43:76:21:c6:2c:b3:81&quot;</span><span class="err">,</span>
+  <span class="s2">&quot;xmpp.recipients&quot;</span><span class="err">:</span> <span class="s2">&quot;test@localhost&quot;</span>
+</pre></div>
+
+<p>Start the Chaos Engine again
+<div class="codehilite"><pre><span></span>docker-compose stop
+</pre></div></p>
+<p>If everything was configured well you should see new message popping up in your IM client.</p>
+<p>Trigger <code>experiment</code> api and check content of incoming messages.</p>
+<div class="codehilite"><pre><span></span>curl -X POST <span class="s2">&quot;http://</span><span class="si">${</span><span class="nv">CHAOS_ENINE_IP</span><span class="si">}</span><span class="s2">:8080/experiment/start&quot;</span>
+</pre></div>
                 
                   
                 
@@ -593,6 +892,20 @@
             </div>
           </a>
         
+        
+          <a href="../Lab 7/" title="Lab 7: Clean up" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Lab 7: Clean up
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

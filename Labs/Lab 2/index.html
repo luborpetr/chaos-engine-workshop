@@ -498,6 +498,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Lab 7/" title="Lab 7: Clean up" class="md-nav__link">
+      Lab 7: Clean up
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -716,7 +728,7 @@ That could be done by following command:</p>
     --priority<span class="o">=</span><span class="m">1000</span> <span class="se">\</span>
     --network<span class="o">=</span>default <span class="se">\</span>
     --action<span class="o">=</span>ALLOW <span class="se">\</span>
-    --rules<span class="o">=</span>tcp:8080,tcp:8200,tcp:9000 <span class="se">\</span>
+    --rules<span class="o">=</span>tcp:8080,tcp:8200,tcp:9000,tcp:5222,tcp:5280,tcp:5269 <span class="se">\</span>
     --source-ranges<span class="o">=</span><span class="m">0</span>.0.0.0/0 <span class="se">\</span>
     --target-tags<span class="o">=</span>chaos-engine
 </pre></div></div>
@@ -724,8 +736,8 @@ That could be done by following command:</p>
 <label for="__tab_3_1">expected command</label>
 <div class="superfences-content"><div class="codehilite"><pre><span></span><span class="err">Creating firewall...⠧Created [https://www.googleapis.com/compute/v1/projects/xxx/global/firewalls/chaos-engine-inbound].</span>
 <span class="err">Creating firewall...done.                                                                                            </span>
-<span class="err">NAME                  NETWORK  DIRECTION  PRIORITY  ALLOW                       DENY  DISABLED</span>
-<span class="err">chaos-engine-inbound  default  INGRESS    1000      tcp:8080,tcp:8200,tcp:9000        False</span>
+<span class="err">NAME                  NETWORK  DIRECTION  PRIORITY  ALLOW                                                  DENY  DISABLED</span>
+<span class="err">chaos-engine-inbound  default  INGRESS    1000      tcp:8080,tcp:8200,tcp:9000,tcp:5222,tcp:5280,tcp:5269        False</span>
 </pre></div></div>
 </div>
 <h3 id="connect-to-the-chaos-engine-instance">Connect to the Chaos Engine instance</h3>
