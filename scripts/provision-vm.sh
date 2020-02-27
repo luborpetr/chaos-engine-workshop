@@ -7,6 +7,9 @@ add-apt-repository \
 
 apt-get update
 
+# Console based jabber client
+apt-get -y install finch
+
 # Install docker prereqs
 apt-get -y install \
     apt-transport-https \

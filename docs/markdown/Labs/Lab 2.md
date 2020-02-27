@@ -67,7 +67,7 @@ gcloud compute firewall-rules create chaos-engine-inbound \
     --priority=1000 \
     --network=default \
     --action=ALLOW \
-    --rules=tcp:8080,tcp:8200,tcp:9000 \
+    --rules=tcp:8080,tcp:8200,tcp:9000,tcp:5222,tcp:5280,tcp:5269 \
     --source-ranges=0.0.0.0/0 \
     --target-tags=chaos-engine
 ```
@@ -75,8 +75,8 @@ gcloud compute firewall-rules create chaos-engine-inbound \
 ```tab="expected command"
 Creating firewall...⠧Created [https://www.googleapis.com/compute/v1/projects/xxx/global/firewalls/chaos-engine-inbound].
 Creating firewall...done.                                                                                            
-NAME                  NETWORK  DIRECTION  PRIORITY  ALLOW                       DENY  DISABLED
-chaos-engine-inbound  default  INGRESS    1000      tcp:8080,tcp:8200,tcp:9000        False
+NAME                  NETWORK  DIRECTION  PRIORITY  ALLOW                                                  DENY  DISABLED
+chaos-engine-inbound  default  INGRESS    1000      tcp:8080,tcp:8200,tcp:9000,tcp:5222,tcp:5280,tcp:5269        False
 
 ```
 
