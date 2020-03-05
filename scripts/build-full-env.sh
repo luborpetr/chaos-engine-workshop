@@ -1,6 +1,12 @@
 #!/bin/bash
 
+
+COMPUTE_INSTANCE_SMALL=n1-standard-1
+COMPUTE_INSTANCE_MEDIUM=n1-standard-2
+COMPUTE_INSTANCE_LARGE=n1-standard-4
+
 CHAOS_ENGINE_INSTANCE_NANE="chaos-engine"
+CHAOS_ENGINE_INSTANCE_TYPE=$COMPUTE_INSTANCE_MEDIUM
 CHAOS_ENGINE_VICTIM_NAME="$CHAOS_ENGINE_INSTANCE_NANE-victim"
 CHAOS_ENGINE_NETWORK_TAGS=$CHAOS_ENGINE_INSTANCE_NANE
 CHAOS_ENGINE_FW_NAME="$CHAOS_ENGINE_INSTANCE_NANE-inbound"
@@ -14,7 +20,7 @@ function provision_chaos_machine() {
   gcloud compute \
     instances create $CHAOS_ENGINE_INSTANCE_NANE \
     --zone=$CHAOS_ENGINE_ZONE \
-    --machine-type=n1-standard-1 \
+    --machine-type=$CHAOS_ENGINE_INSTANCE_TYPE \
     --no-service-account \
     --no-scopes \
     --tags=$CHAOS_ENGINE_NETWORK_TAGS \
@@ -87,6 +93,12 @@ function full_install() {
     deploy_k8s_cluster
     deploy_workload
 
+}
+
+function purge_all() {
+    gcloud compute instances delete --quiet --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE
+    gcloud compute firewall-rules delete  --quiet chaos-engine-inbound
+    gcloud container clusters delete --quiet --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_VICTIM_NAME
 }
 
 $1
