@@ -26,9 +26,5 @@ jobs:
         run: bash ./scripts/docs/mkdocs_build.sh
       - name: Publish
         run:  cd docs; mkdocs gh-deploy -v
-      - name: Upload Documentation
-        uses: actions/upload-artifact@v1
-        with:
-          name: documentation
-          path: "documentation"
+
 
