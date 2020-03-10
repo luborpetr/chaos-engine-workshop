@@ -1,0 +1,19 @@
+
+name: Documentation Builder
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v1
+      - name: mkDocs Build
+        run: ci/docs/mkdocs_build.sh;
+      - name: publish
+        run: mkdocs gh-deploy -v
+
