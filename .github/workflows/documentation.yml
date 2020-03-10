@@ -18,9 +18,9 @@ jobs:
       - name: Prepare Build Environment
         run: ./scripts/docs/mkdocs_pre_build.sh
       - name: Build Documentation
-        run: ./scripts/docs/mkdocs_build.sh public documentation
+        run: ./scripts/docs/mkdocs_build.sh
       - name: Publish
-        run: cd documentation; mkdocs gh-deploy -v
+        run: cp docs/mkdocs.yml .;cd public; mkdocs gh-deploy -v
       - name: Upload Documentation
         uses: actions/upload-artifact@v1
         with:
