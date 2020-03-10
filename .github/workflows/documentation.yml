@@ -16,6 +16,8 @@ jobs:
         with:
           token: '${{ secrets.PUSH_TOKEN }}'
           persist-credentials: 'true'
+      - name: Initialize Git
+        run: git fetch
       - name: Initialize version variable
         run: echo "::set-env name=VERSION::$(date +%F-%T)"
       - name: Prepare Build Environment
