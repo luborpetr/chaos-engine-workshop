@@ -19,9 +19,9 @@ jobs:
       - name: Initialize version variable
         run: echo "::set-env name=VERSION::$(date +%F-%T)"
       - name: Prepare Build Environment
-        run: ./scripts/docs/mkdocs_pre_build.sh
+        run: bash ./scripts/docs/mkdocs_pre_build.sh
       - name: Build Documentation
-        run: ./scripts/docs/mkdocs_build.sh
+        run: bash ./scripts/docs/mkdocs_build.sh
       - name: Publish
         run:  cd docs; mkdocs gh-deploy -v
       - name: Upload Documentation
