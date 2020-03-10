@@ -8,12 +8,26 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout master
-        uses: actions/checkout@v1
-      - name: mkDocs Build
-        run: scripts/build-docs.sh;
-      - name: publish
-        run: mkdocs gh-deploy -v
+    runs-on: [ubuntu-latest]
+      container:
+        image: python:3-alpine
+      steps:
+        - uses: actions/checkout@v1
+        - name: Download build artifact
+          uses: actions/download-artifact@v1
+          with:
+            name: variables
+        - name: Extract Version
+          run: mv variables/version version
+        - name: Prepare Build Environment
+          run: ./scripts/docs/mkdocs_pre_build.sh
+        - name: Build Documentation
+          run: ./scripts/docs/mkdocs_build.sh public documentation
+        - name: Publish
+          run: cd public; mkdocs gh-deploy -v
+        - name: Upload Documentation
+          uses: actions/upload-artifact@v1
+          with:
+            name: documentation
+            path: "documentation"
 
