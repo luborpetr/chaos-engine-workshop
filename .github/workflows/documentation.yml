@@ -13,7 +13,7 @@ jobs:
       - name: Checkout master
         uses: actions/checkout@v1
       - name: mkDocs Build
-        run: ci/docs/mkdocs_build.sh;
+        run: scripts/build_docs.sh;
       - name: publish
         run: mkdocs gh-deploy -v
 
