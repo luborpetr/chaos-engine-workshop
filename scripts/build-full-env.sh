@@ -6,7 +6,7 @@ COMPUTE_INSTANCE_MEDIUM=n1-standard-2
 COMPUTE_INSTANCE_LARGE=n1-standard-4
 
 CHAOS_ENGINE_INSTANCE_NANE="chaos-engine"
-CHAOS_ENGINE_INSTANCE_TYPE=$COMPUTE_INSTANCE_MEDIUM
+CHAOS_ENGINE_INSTANCE_TYPE=$COMPUTE_INSTANCE_LARGE
 CHAOS_ENGINE_VICTIM_NAME="$CHAOS_ENGINE_INSTANCE_NANE-victim"
 CHAOS_ENGINE_NETWORK_TAGS=$CHAOS_ENGINE_INSTANCE_NANE
 CHAOS_ENGINE_FW_NAME="$CHAOS_ENGINE_INSTANCE_NANE-inbound"
@@ -31,6 +31,8 @@ function provision_chaos_machine() {
     --boot-disk-device-name=$CHAOS_ENGINE_INSTANCE_NANE \
     --metadata-from-file startup-script=$SCRIPT_LOCATION/provision-vm.sh
 
+    sleep 60
+
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
       sudo usermod -a -G docker $USER
       cd
@@ -53,7 +55,7 @@ function setup_firewall() {
 function deploy_chaos_engine() {
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
       cd
-      git clone https://github.com/gemalto/chaos-engine.git
+      git clone https://github.com/ThalesGroup/chaos-engine.git
       cd chaos-engine
       wget -O docker-compose.yml https://raw.githubusercontent.com/luborpetr/chaos-engine-workshop/master/docker/docker-compose.yml
       docker-compose pull
@@ -65,7 +67,7 @@ function deploy_k8s_cluster() {
     --zone $CHAOS_ENGINE_ZONE \
     --no-enable-basic-auth \
     --cluster-version "1.14.10-gke.17" \
-    --machine-type "g1-small" \
+    --machine-type "$COMPUTE_INSTANCE_SMALL" \
     --image-type "COS" \
     --disk-type "pd-standard" \
     --disk-size "20" \
