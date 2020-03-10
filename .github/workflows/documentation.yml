@@ -20,7 +20,7 @@ jobs:
       - name: Build Documentation
         run: ./scripts/docs/mkdocs_build.sh public documentation
       - name: Publish
-        run: cd public; mkdocs gh-deploy -v
+        run: cd docs/public; mkdocs gh-deploy -v
       - name: Upload Documentation
         uses: actions/upload-artifact@v1
         with:
