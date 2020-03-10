@@ -12,7 +12,10 @@ jobs:
     container:
       image: python:3-alpine
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          token: '${{ secrets.PUSH_TOKEN }}'
+          persist-credentials: 'true'
       - name: Initialize version variable
         run: echo "::set-env name=VERSION::$(date +%F-%T)"
       - name: Prepare Build Environment
