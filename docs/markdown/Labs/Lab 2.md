@@ -162,11 +162,11 @@ Clone official Chaos Engine GitHub repo in order to get latest version of the co
 From your Chaos Engine VM run:
 
 ```bash tab="shell command"
-git clone https://github.com/gemalto/chaos-engine.git
+git clone https://github.com/ThalesGroup/chaos-engine.git
 ```
 
 ```tab="expected output"
-user@chaos-engine:~$ git clone https://github.com/gemalto/chaos-engine.git
+user@chaos-engine:~$ git clone https://github.com/ThalesGroup/chaos-engine.git
 Cloning into 'chaos-engine'...
 remote: Enumerating objects: 691, done.
 remote: Counting objects: 100% (691/691), done.

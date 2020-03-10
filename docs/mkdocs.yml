@@ -1,6 +1,6 @@
 site_name: Chaos Engine Workshop
 site_description: 'A tool for automated Chaos Experimentation'
-repo_url: https://github.com/gemalto/chaos-engine
+repo_url: https://github.com/ThalesGroup/chaos-engine
 repo_name: chaos-engine @ GitHub
 docs_dir: markdown
 
@@ -17,8 +17,8 @@ theme:
     code: Fira Code
   feature:
     tabs: true
-  favicon: 'https://github.com/gemalto/chaos-engine/raw/master/docs/markdown/images/icon.png'
-  logo: 'https://github.com/gemalto/chaos-engine/raw/master/docs/markdown/images/icon.png'
+  favicon: 'https://github.com/ThalesGroup/chaos-engine/raw/master/docs/markdown/images/icon.png'
+  logo: 'https://github.com/ThalesGroup/chaos-engine/raw/master/docs/markdown/images/icon.png'
 
 markdown_extensions:
   - admonition
@@ -29,7 +29,7 @@ markdown_extensions:
 extra:
   social:
     - type: tags
-      link: 'https://github.com/gemalto/chaos-engine/issues'
+      link: 'https://github.com/ThalesGroup/chaos-engine/issues'
 
 copyright: |
   &copy; 2019 Thales Group<br />

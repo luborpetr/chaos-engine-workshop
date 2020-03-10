@@ -73,7 +73,7 @@ At the moment it supports:
 
 - XMPP / Jabber
 
-For detail description of each notification channel and message content [see documentation.](https://gemalto.github.io/chaos-engine/Logging_and_Reporting/Notifications/slack/)
+For detail description of each notification channel and message content [see documentation.](https://thalesgroup.github.io/chaos-engine/Logging_and_Reporting/Notifications/slack/)
 
 ### XMPP Module
 Let's activate XMPP module to better understand how it works.
