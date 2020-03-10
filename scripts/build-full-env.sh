@@ -84,7 +84,7 @@ function deploy_k8s_cluster() {
 function deploy_workload() {
     gcloud container clusters get-credentials $CHAOS_ENGINE_VICTIM_NAME --zone $CHAOS_ENGINE_ZONE
 
-    kubectl apply -f $SCRIPT_LOCATION/../kubernetes/applications.yml
+    kubectl apply -f $SCRIPT_LOCATION/../kubernetes/hipster_shop.yml
 
 }
 
