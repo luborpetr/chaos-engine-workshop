@@ -13,12 +13,8 @@ jobs:
       image: python:3-alpine
     steps:
       - uses: actions/checkout@v1
-      - name: Download build artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: variables
-      - name: Extract Version
-        run: mv variables/version version
+      - name: Initialize version variable
+        run: echo "::set-env name=VERSION::$(date +%F-%T)"
       - name: Prepare Build Environment
         run: ./scripts/docs/mkdocs_pre_build.sh
       - name: Build Documentation
