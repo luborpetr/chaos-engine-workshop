@@ -16,6 +16,22 @@ OPENED_PORTS="tcp:8080,tcp:8200,tcp:9000,tcp:5222,tcp:5280,tcp:5269,tcp:8089"
 
 SCRIPT_LOCATION=$(readlink -f $(dirname $0))
 
+function wait_for_machine() {
+  MAX_RETRIES=10
+  RETRY_NO=0
+  STATUS_CODE=255
+     while [ $STATUS_CODE -ne 0 ]; do
+      RETRY_NO=$((RETRY_NO+1))
+      echo $(date) "Machine is not yet ready";
+      gcloud compute ssh --zone $1 $2
+      STATUS_CODE=$?
+      if [ $RETRY_NO -gt $MAX_RETRIES ]; then
+        break;
+      fi
+      sleep 10
+    done
+}
+
 function provision_chaos_machine() {
   gcloud compute \
     instances create $CHAOS_ENGINE_INSTANCE_NANE \
@@ -31,7 +47,7 @@ function provision_chaos_machine() {
     --boot-disk-device-name=$CHAOS_ENGINE_INSTANCE_NANE \
     --metadata-from-file startup-script=$SCRIPT_LOCATION/provision-vm.sh
 
-    sleep 60
+    wait_for_machine $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE
 
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
       sudo usermod -a -G docker $USER
@@ -53,6 +69,8 @@ function setup_firewall() {
 }
 
 function deploy_chaos_engine() {
+    wait_for_machine $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE
+
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
       cd
       git clone https://github.com/ThalesGroup/chaos-engine.git
