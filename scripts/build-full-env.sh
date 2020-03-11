@@ -85,7 +85,7 @@ function deploy_k8s_cluster() {
     --zone $CHAOS_ENGINE_ZONE \
     --no-enable-basic-auth \
     --cluster-version "1.14.10-gke.17" \
-    --machine-type "$COMPUTE_INSTANCE_SMALL" \
+    --machine-type "$COMPUTE_INSTANCE_MEDIUM" \
     --image-type "COS" \
     --disk-type "pd-standard" \
     --disk-size "20" \
@@ -115,10 +115,22 @@ function full_install() {
 
 }
 
-function purge_all() {
+function delete_chaos_machine() {
     gcloud compute instances delete --quiet --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE
-    gcloud compute firewall-rules delete  --quiet chaos-engine-inbound
-    gcloud container clusters delete --quiet --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_VICTIM_NAME
+}
+
+function delete_firewall() {
+  gcloud compute firewall-rules delete  --quiet chaos-engine-inbound
+}
+
+function delete_cluster() {
+  gcloud container clusters delete --quiet --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_VICTIM_NAME
+}
+
+function purge_all() {
+  delete_chaos_machine
+  delete_firewall
+  delete_cluster
 }
 
 $1
