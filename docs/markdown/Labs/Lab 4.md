@@ -34,7 +34,7 @@ In order to activate necessary Chaos Engine modules we need to define following 
 
 ```json
 {
-  "holidays": "DUM",
+  "holidays": "NONSTOP",
   "automatedMode": "false",
   "chaos.security.enabled": "false",
   "kubernetes": "",
