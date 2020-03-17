@@ -7,6 +7,12 @@ add-apt-repository \
 
 apt-get update
 
+# Install utils
+apt-get -y install mc
+
+# Install desktop
+apt-get -y install xrdb tightvncserver pidgin novnc
+
 # Console based jabber client
 apt-get -y install finch
 
