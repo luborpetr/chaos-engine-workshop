@@ -42,7 +42,7 @@ function provision_chaos_machine() {
     --tags=$CHAOS_ENGINE_NETWORK_TAGS \
     --image=ubuntu-1604-xenial-v20200129 \
     --image-project=ubuntu-os-cloud \
-    --boot-disk-size=20GB \
+    --boot-disk-size=30GB \
     --boot-disk-type=pd-standard \
     --boot-disk-device-name=$CHAOS_ENGINE_INSTANCE_NANE \
     --metadata-from-file startup-script=$SCRIPT_LOCATION/provision-vm.sh
@@ -85,7 +85,7 @@ function deploy_k8s_cluster() {
     --zone $CHAOS_ENGINE_ZONE \
     --no-enable-basic-auth \
     --cluster-version "1.14.10-gke.17" \
-    --machine-type "$COMPUTE_INSTANCE_MEDIUM" \
+    --machine-type "$COMPUTE_INSTANCE_SMALL" \
     --image-type "COS" \
     --disk-type "pd-standard" \
     --disk-size "20" \
