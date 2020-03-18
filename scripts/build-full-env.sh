@@ -49,10 +49,11 @@ function provision_chaos_machine() {
     wait_for_machine $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE
 
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
-      cd
-      rm -rf chaos-engine-workshop
       git clone https://github.com/luborpetr/chaos-engine-workshop.git
       sudo chaos-engine-workshop/scripts/provision-vm.sh
+      "
+    # Containers must be started in new terminal session
+    gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
       chaos-engine-workshop/scripts/configuration/configure-vnc.sh
       chaos-engine-workshop/scripts/configuration/configure-jabber.sh
       "
