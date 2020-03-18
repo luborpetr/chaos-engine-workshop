@@ -51,6 +51,7 @@ function provision_chaos_machine() {
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
       git clone https://github.com/luborpetr/chaos-engine-workshop.git
       sudo chaos-engine-workshop/scripts/provision-vm.sh
+      sudo usermod -a -G docker \$USER
       "
     # Containers must be started in new terminal session
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
