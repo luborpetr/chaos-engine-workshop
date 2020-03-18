@@ -53,8 +53,8 @@ function provision_chaos_machine() {
       rm -rf chaos-engine-workshop
       git clone https://github.com/luborpetr/chaos-engine-workshop.git
       sudo chaos-engine-workshop/scripts/provision-vm.sh
-      chaos-engine-workshop/scripts/configuration/configre-vnc.sh
-      chaos-engine-workshop/scripts/configuration/configre-jabber.sh
+      chaos-engine-workshop/scripts/configuration/configure-vnc.sh
+      chaos-engine-workshop/scripts/configuration/configure-jabber.sh
       "
 }
 
