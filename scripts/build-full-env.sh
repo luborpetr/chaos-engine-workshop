@@ -23,7 +23,7 @@ function wait_for_machine() {
      while [ $STATUS_CODE -ne 0 ]; do
       RETRY_NO=$((RETRY_NO+1))
       echo $(date) "Machine is not yet ready";
-      gcloud compute ssh --zone $1 $2 --command "echo $(hostname) is ready"
+      gcloud compute ssh --zone $1 $2 --command "echo Machine is ready"
       STATUS_CODE=$?
       if [ $RETRY_NO -gt $MAX_RETRIES ]; then
         break;
@@ -53,6 +53,8 @@ function provision_chaos_machine() {
       rm -rf chaos-engine-workshop
       git clone https://github.com/luborpetr/chaos-engine-workshop.git
       sudo chaos-engine-workshop/scripts/provision-vm.sh
+      chaos-engine-workshop/scripts/configre-vnc.sh
+      chaos-engine-workshop/scripts/configre-jabber.sh
       "
 }
 

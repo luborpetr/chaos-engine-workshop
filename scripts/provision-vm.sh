@@ -13,7 +13,7 @@ apt-get -y install mc aptitude terminator
 aptitude update
 
 echo "Install desktop"
-apt-get -y install x11-xserver-utils tightvncserver pidgin novnc fxce4 xubuntu-icon-theme gnome-icon-theme tango-icon-theme
+apt-get -y install x11-xserver-utils tightvncserver pidgin novnc xfce4 xubuntu-icon-theme gnome-icon-theme tango-icon-theme
 
 echo "Install console based jabber client"
 apt-get -y install finch
