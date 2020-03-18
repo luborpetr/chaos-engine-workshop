@@ -1,23 +1,24 @@
 #!/bin/bash
-# Add docker.io repo
+echo "Add docker.io repo"
 add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 
+echo "Apt update"
 apt-get update
 
-# Install utils
+echo "Install utils"
 apt-get -y install mc aptitude terminator
 aptitude update
 
-# Install desktop
+echo "Install desktop"
 apt-get -y install x11-xserver-utils tightvncserver pidgin novnc fxce4 xubuntu-icon-theme gnome-icon-theme tango-icon-theme
 
-# Console based jabber client
+echo "Install console based jabber client"
 apt-get -y install finch
 
-# Install docker prereqs
+echo "Install docker prereqs"
 apt-get -y install \
     apt-transport-https \
     ca-certificates \
@@ -25,11 +26,11 @@ apt-get -y install \
     gnupg-agent \
     software-properties-common
 
-# Install docker
+echo "Install docker"
 apt-get -y --allow-unauthenticated install docker-ce docker-ce-cli containerd.io
 
-# Inastall docker-compose
-curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+echo "Install docker-compose"
+curl -s -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 chmod +x /usr/local/bin/docker-compose
 

@@ -23,7 +23,7 @@ function wait_for_machine() {
      while [ $STATUS_CODE -ne 0 ]; do
       RETRY_NO=$((RETRY_NO+1))
       echo $(date) "Machine is not yet ready";
-      gcloud compute ssh --zone $1 $2
+      gcloud compute ssh --zone $1 $2 --command "echo $(hostname) is ready"
       STATUS_CODE=$?
       if [ $RETRY_NO -gt $MAX_RETRIES ]; then
         break;
@@ -44,15 +44,15 @@ function provision_chaos_machine() {
     --image-project=ubuntu-os-cloud \
     --boot-disk-size=30GB \
     --boot-disk-type=pd-standard \
-    --boot-disk-device-name=$CHAOS_ENGINE_INSTANCE_NANE \
-    --metadata-from-file startup-script=$SCRIPT_LOCATION/provision-vm.sh
+    --boot-disk-device-name=$CHAOS_ENGINE_INSTANCE_NANE
 
     wait_for_machine $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE
 
     gcloud compute ssh --zone $CHAOS_ENGINE_ZONE $CHAOS_ENGINE_INSTANCE_NANE --command "
-      sudo usermod -a -G docker $USER
       cd
+      rm -rf chaos-engine-workshop
       git clone https://github.com/luborpetr/chaos-engine-workshop.git
+      sudo chaos-engine-workshop/scripts/provision-vm.sh
       "
 }
 
