@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Configure new VNC session
+
 PASSWD="firefox"
 
 mkdir /home/$USER/.vnc

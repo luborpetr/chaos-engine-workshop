@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Start and provision XMPP test server
+
 docker run -it --rm -d --name ejabberd  \
     -p 5222:5222 \
     -p 5269:5269 \
