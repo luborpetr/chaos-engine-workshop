@@ -10,5 +10,5 @@ docker run -it --rm -d --name ejabberd  \
     -p 5280:5280 ejabberd/ecs
 
 
-docker exec -it ejabberd bin/ejabberdctl register test localhost test
-docker exec -it ejabberd bin/ejabberdctl register chaos localhost test
+docker exec  ejabberd bin/ejabberdctl register test localhost test
+docker exec  ejabberd bin/ejabberdctl register chaos localhost test
