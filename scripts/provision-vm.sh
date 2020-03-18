@@ -8,10 +8,11 @@ add-apt-repository \
 apt-get update
 
 # Install utils
-apt-get -y install mc
+apt-get -y install mc aptitude terminator
+aptitude update
 
 # Install desktop
-apt-get -y install xrdb tightvncserver pidgin novnc
+apt-get -y install x11-xserver-utils tightvncserver pidgin novnc fxce4 xubuntu-icon-theme gnome-icon-theme tango-icon-theme
 
 # Console based jabber client
 apt-get -y install finch
